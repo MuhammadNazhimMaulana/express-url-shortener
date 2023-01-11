@@ -1,0 +1,20 @@
+{
+  "name": "simple-url-shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js.js",
+  "scripts": {
+    "start": "nodemon src/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.7",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  }
+}
