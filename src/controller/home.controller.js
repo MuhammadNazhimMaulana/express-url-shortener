@@ -2,7 +2,7 @@
 index = async (req, res) => {
     try {
         // Sending Data
-        res.render('home', {
+        res.render('pages/home', {
             layout: 'layouts/main',
             title: 'Halaman Home',
         });
