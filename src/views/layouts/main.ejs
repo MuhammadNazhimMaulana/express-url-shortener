@@ -10,21 +10,21 @@
     
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    
-    <!-- Custom Css -->
-    <link rel="stylesheet" href="css/style.css">
-    
+       
     <title><%= title %> </title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
 
     <!-- Include Navbar-->
     <%- include('./partials/nav') %>
-
+    
     <div class="container">
         <!-- Isi Halaman Lain -->
         <%- body %> 
     </div>
+
+    <!-- Include Footer-->
+    <%- include('./partials/footer') %>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
