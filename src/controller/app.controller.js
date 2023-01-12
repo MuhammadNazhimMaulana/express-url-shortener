@@ -7,6 +7,22 @@ const Url = require('../models/url.model')
 // The API base Url endpoint
 const baseUrl = 'http:localhost:3000'
 
+// Index View
+index = async (req, res) => {
+    try {
+        // Sending Data
+        res.render('pages/shorten', {
+            layout: 'layouts/main',
+            title: 'Shorten URL',
+        });
+    } catch (error) {
+        // If Error
+        return res.json({
+            error
+        });
+    }
+}
+
 // Shorten
 shorten = async (req, res) => {
     try {
@@ -85,5 +101,5 @@ redirect = async (req, res) => {
 
 
 module.exports = {
-    shorten, redirect
+    index, shorten, redirect
 };
