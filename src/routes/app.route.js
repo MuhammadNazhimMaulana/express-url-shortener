@@ -9,6 +9,9 @@ router.get('/', AppController.index);
 // Shorten
 router.post('/shorten', AppController.shorten);
 
+// Result
+router.get('/result', AppController.result);
+
 // Redirect
 router.get('/:code', AppController.redirect);
 

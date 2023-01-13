@@ -62,9 +62,44 @@ shorten = async (req, res) => {
                 urlCode,
             })
             await url.save()
-            res.json(url)
+            
+            // Prepare String
+            let string = encodeURIComponent(url.urlCode);
+
+            // Redirect 
+            res.redirect('/app/result?value='+ string);
         }
     }
+
+    } catch (error) {
+        // If Error
+        return res.json({
+            error
+        });
+    }
+}
+
+// Result
+result = async (req, res) => {
+    try {
+
+        // find a document match to the code in req.params.code
+        const url = await Url.findOne({
+            urlCode: req.query.value
+        });
+        
+        if (url) {
+            // If URL is Valid
+            res.render('pages/result', {
+                layout: 'layouts/main',
+                title: 'Result',
+                url
+            });
+
+        } else {
+            // else return a not found 404 status
+            return res.status(404).json('No URL Found')
+        }
 
     } catch (error) {
         // If Error
@@ -84,7 +119,6 @@ redirect = async (req, res) => {
         });
         
         if (url) {
-            // when valid we perform a redirect
             return res.redirect(url.longUrl)
         } else {
             // else return a not found 404 status
@@ -101,5 +135,5 @@ redirect = async (req, res) => {
 
 
 module.exports = {
-    index, shorten, redirect
+    index, shorten, redirect, result
 };
