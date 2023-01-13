@@ -1,1 +1,14 @@
-<h1>Shorten</h1>
+<h1 class="text-center">URL Shortener</h1>
+
+<form method="post" action="/app/shorten">
+    <div class="d-flex justify-content-center" style="margin-top: 15%;">
+        <div class="col-md-10">
+            <div class="form-group">
+                <input type="text" class="form-control" id="longUrl" name="longUrl" placeholder="Enter URL">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary ms-3">Shorten</button>
+        </div>
+    </div>
+</form>
