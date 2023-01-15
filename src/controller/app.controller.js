@@ -14,6 +14,7 @@ index = async (req, res) => {
         res.render('pages/shorten', {
             layout: 'layouts/main',
             title: 'Shorten URL',
+            pages: 'App'
         });
     } catch (error) {
         // If Error
@@ -93,6 +94,7 @@ result = async (req, res) => {
             res.render('pages/result', {
                 layout: 'layouts/main',
                 title: 'Result',
+                pages: 'App',
                 url
             });
 

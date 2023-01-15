@@ -5,6 +5,7 @@ index = async (req, res) => {
         res.render('pages/home', {
             layout: 'layouts/main',
             title: 'Halaman Home',
+            pages: 'Home'
         });
     } catch (error) {
         // If Error
